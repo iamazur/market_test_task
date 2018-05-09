@@ -10,9 +10,7 @@ namespace MarketTest.DAL.Contexts
     public class MarketContext : DbContext
     {
         public MarketContext() { }
-
-        public DbSet<ProductEntity> ProductEntity { get; set; }
-
+        
         public MarketContext(DbContextOptions<MarketContext> options)
                     : base(options)
         {
@@ -21,7 +19,7 @@ namespace MarketTest.DAL.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             RegisterFoundEntityConfigs(modelBuilder);
-
+            
             base.OnModelCreating(modelBuilder);
         }
 

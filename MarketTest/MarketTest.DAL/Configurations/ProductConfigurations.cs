@@ -7,6 +7,8 @@ namespace MarketTest.DAL.Configurations
     {
         public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
+            builder.ToTable("Products");
+
             builder.HasKey(x => x.Code);
 
             builder.Property(x => x.Name).IsRequired();
