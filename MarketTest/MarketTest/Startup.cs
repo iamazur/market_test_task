@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MarketTest.BL.Services;
 using MarketTest.CompositionRoot;
 using MarketTest.DAL.Contexts;
 using Microsoft.AspNetCore.Builder;
@@ -68,6 +69,7 @@ namespace MarketTest
 
         private void ConfigureOptions(IServiceCollection services)
         {
+            //services.ConfigureFromSection<MarketService>(Configuration);
         }
     }
 }

@@ -10,8 +10,8 @@ using System;
 namespace MarketTest.DAL.Migrations
 {
     [DbContext(typeof(MarketContext))]
-    [Migration("20180509143741_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20180509174546_Inital")]
+    partial class Inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

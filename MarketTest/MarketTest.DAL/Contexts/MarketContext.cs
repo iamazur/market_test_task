@@ -3,12 +3,15 @@ using Microsoft.EntityFrameworkCore.Design;
 using System;
 using System.Linq;
 using System.Reflection;
+using MarketTest.DAL.Entites;
 
 namespace MarketTest.DAL.Contexts
 {
     public class MarketContext : DbContext
     {
         public MarketContext() { }
+
+        public DbSet<ProductEntity> ProductEntity { get; set; }
 
         public MarketContext(DbContextOptions<MarketContext> options)
                     : base(options)

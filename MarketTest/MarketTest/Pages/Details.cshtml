@@ -1,0 +1,44 @@
+﻿@page
+@model MarketTest.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product.Category)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Product.Code">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

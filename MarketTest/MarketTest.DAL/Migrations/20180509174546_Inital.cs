@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MarketTest.DAL.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

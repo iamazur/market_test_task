@@ -6,13 +6,13 @@ using System.Text;
 
 namespace MarketTest.DAL.Infrastrusture
 {
-    public sealed class EFUnitOfWork : IUnitOfWork
+    public sealed class UnitOfWork : IUnitOfWork
     {
         private readonly MarketContext _dbContext;
         private bool _disposed;
         private Dictionary<string, object> _repositories;
 
-        public EFUnitOfWork(MarketContext dbContext)
+        public UnitOfWork(MarketContext dbContext)
         {
             _dbContext = dbContext;
         }

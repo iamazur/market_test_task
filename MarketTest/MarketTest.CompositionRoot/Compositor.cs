@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MarketTest.BL.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 using System;
+using MarketTest.BL.Services;
+using MarketTest.DAL.Infrastrusture;
 
 namespace MarketTest.CompositionRoot
 {
@@ -7,6 +10,9 @@ namespace MarketTest.CompositionRoot
     {
         public void Compose(IServiceCollection serviceCollection)
         {
+            serviceCollection.AddScoped<IMarketService, MarketService>();
+            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
+            serviceCollection.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
     }
 }
