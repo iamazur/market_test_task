@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MarketTest.BL.Abstractions;
 using MarketTest.BL.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MarketTest.Pages
 {
@@ -18,9 +19,9 @@ namespace MarketTest.Pages
         
         public IList<ProductViewModel> Products { get;set; }
 
-        public void OnGetAsync()
+        public void OnGet(string category, string name)
         {
-            Products = _marketService.GetAllProducts(String.Empty, String.Empty, 0, 10).ToList();
+            Products = _marketService.GetAllProducts(name, category, 0, 10).ToList();
         }
     }
 }

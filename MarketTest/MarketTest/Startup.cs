@@ -63,7 +63,7 @@ namespace MarketTest
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    template: "{controller}/{action=Index}");
             });
         }
 
