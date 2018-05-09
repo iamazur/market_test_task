@@ -18,9 +18,11 @@ namespace MarketTest.Pages
         }
         
         public IList<ProductViewModel> Products { get;set; }
+        public double VAT { get; set; }
 
         public void OnGet(string category, string name)
         {
+            VAT = 1.125;
             Products = _marketService.GetAllProducts(name, category, 0, 10).ToList();
         }
     }

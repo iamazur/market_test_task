@@ -26,8 +26,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Products[0].Category)
         </th>
+        <th>         
+            Price excl. VAT
+        </th>
         <th>
-            @Html.DisplayNameFor(model => model.Products[0].Price)
+            Price incl. VAT
         </th>
         <th></th>
     </tr>
@@ -49,6 +52,10 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @{ var newPrice = item.Price * Model.VAT; }
+            @Html.DisplayFor(modelItem => newPrice)
         </td>
         <td>
             <a asp-page="./Edit" asp-route-id="@item.Code">Edit</a> |
