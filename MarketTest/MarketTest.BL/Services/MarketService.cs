@@ -61,8 +61,8 @@ namespace MarketTest.BL.Services
         {
             var products = _unitOfWork.Repository<ProductEntity>()
                                       .Set
-                                      .Where(x => (String.IsNullOrEmpty(name) || x.Name.StartsWith(name))
-                                               && (String.IsNullOrEmpty(category) || x.Category.StartsWith(category)))
+                                      .Where(x => (String.IsNullOrEmpty(name) || x.Name.ToLower().Replace(' ', '-') == name.ToLower())
+                                               && (String.IsNullOrEmpty(category) || x.Category.ToLower() == category.ToLower()))
                                       .OrderBy(x => x.Code)
                                       .Skip(skip == default(int) ? 0 : skip)
                                       .Take(take == default(int) ? 0 : take)
