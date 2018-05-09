@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MarketTest.CompositionRoot;
 using MarketTest.DAL.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,10 @@ namespace MarketTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Compositor compositor = new Compositor();
+            compositor.Compose(services);
+            ConfigureOptions(services);
+
             services.AddDbContext<MarketContext>(o =>
             {
                 string connStr = Configuration.GetConnectionString("Development");
@@ -59,6 +64,10 @@ namespace MarketTest
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+        }
+
+        private void ConfigureOptions(IServiceCollection services)
+        {
         }
     }
 }
