@@ -12,8 +12,7 @@ namespace MarketTest.DAL.Infrastrusture
         public static void Initialize(MarketContext context)
         {
             context.Database.EnsureCreated();
-
-            // Look for any students.
+            
             if (context.Set<ProductEntity>().Any())
             {
                 return;   // DB has been seeded
