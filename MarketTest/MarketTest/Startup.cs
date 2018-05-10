@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MarketTest.BL.Options;
 using MarketTest.BL.Services;
 using MarketTest.CompositionRoot;
 using MarketTest.DAL.Contexts;
+using MarketTest.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -69,7 +71,7 @@ namespace MarketTest
 
         private void ConfigureOptions(IServiceCollection services)
         {
-            //services.ConfigureFromSection<MarketService>(Configuration);
+            services.ConfigureFromSection<VATOptions>(Configuration);
         }
     }
 }

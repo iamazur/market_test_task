@@ -36,7 +36,7 @@ namespace MarketTest.DAL.Migrations
 
                     b.HasKey("Code");
 
-                    b.ToTable("ProductEntity");
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

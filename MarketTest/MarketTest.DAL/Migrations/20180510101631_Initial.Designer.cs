@@ -10,8 +10,8 @@ using System;
 namespace MarketTest.DAL.Migrations
 {
     [DbContext(typeof(MarketContext))]
-    [Migration("20180509174546_Inital")]
-    partial class Inital
+    [Migration("20180510101631_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,7 @@ namespace MarketTest.DAL.Migrations
 
                     b.HasKey("Code");
 
-                    b.ToTable("ProductEntity");
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

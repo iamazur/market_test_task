@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace MarketTest.DAL.Migrations
 {
-    public partial class Inital : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ProductEntity",
+                name: "Products",
                 columns: table => new
                 {
                     Code = table.Column<string>(nullable: false),
@@ -20,14 +20,14 @@ namespace MarketTest.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductEntity", x => x.Code);
+                    table.PrimaryKey("PK_Products", x => x.Code);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProductEntity");
+                name: "Products");
         }
     }
 }
